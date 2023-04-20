@@ -1,0 +1,3 @@
+C:/Users/joaok/OneDrive/Área de Trabalho/Programas UCC/Programacion 2/u3POO4/cmake-build-debug/CMakeFiles/u3POO4.dir
+C:/Users/joaok/OneDrive/Área de Trabalho/Programas UCC/Programacion 2/u3POO4/cmake-build-debug/CMakeFiles/edit_cache.dir
+C:/Users/joaok/OneDrive/Área de Trabalho/Programas UCC/Programacion 2/u3POO4/cmake-build-debug/CMakeFiles/rebuild_cache.dir

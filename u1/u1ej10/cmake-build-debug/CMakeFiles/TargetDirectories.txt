@@ -1,0 +1,3 @@
+C:/Users/joaok/Documents/Programacao II/u1ej10/cmake-build-debug/CMakeFiles/u1ej10.dir
+C:/Users/joaok/Documents/Programacao II/u1ej10/cmake-build-debug/CMakeFiles/edit_cache.dir
+C:/Users/joaok/Documents/Programacao II/u1ej10/cmake-build-debug/CMakeFiles/rebuild_cache.dir

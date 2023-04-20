@@ -1,0 +1,3 @@
+C:/Users/joaok/OneDrive/Documents/A-FACULDADE/ANO 2/Programacao II/Projetos/u1ej9/cmake-build-debug/CMakeFiles/u1ej9.dir
+C:/Users/joaok/OneDrive/Documents/A-FACULDADE/ANO 2/Programacao II/Projetos/u1ej9/cmake-build-debug/CMakeFiles/edit_cache.dir
+C:/Users/joaok/OneDrive/Documents/A-FACULDADE/ANO 2/Programacao II/Projetos/u1ej9/cmake-build-debug/CMakeFiles/rebuild_cache.dir
