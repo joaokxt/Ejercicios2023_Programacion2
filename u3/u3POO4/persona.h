@@ -21,11 +21,17 @@ public:
     Persona(std::string name, int age, char id[8], char sex, double weight, double height);
     int calcularIMC();
     bool esMayorDeEdad();
-    void setNombre();
-    void setEdad();
-    void setSexo();
-    void setPeso();
-    void setAltura();
+    void setNombre(string name);
+    void setEdad(int age);
+    void setSexo(char sex);
+    void setPeso(double weight);
+    void setAltura(double height);
+    string getNombre();
+    int getEdad();
+    char* getDNI();
+    char getSexo();
+    double getPeso();
+    double getAltura();
 };
 
 

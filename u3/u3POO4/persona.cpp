@@ -12,7 +12,7 @@ Persona::Persona() {
     altura=0;
     generaDNI();
 }
-Persona::Persona(std::string name, int age, char sex) {
+Persona::Persona(string name, int age, char sex) {
     nombre=name;
     edad=age;
     sexo=sex;
@@ -20,7 +20,7 @@ Persona::Persona(std::string name, int age, char sex) {
     altura=0;
     generaDNI();
 }
-Persona::Persona(std::string name, int age, char id[8], char sex, double weight, double height) {
+Persona::Persona(string name, int age, char id[8], char sex, double weight, double height) {
     nombre=name;
     edad=age;
     sexo=sex;
@@ -51,4 +51,38 @@ void Persona::generaDNI() {
     for(p=dni,i=0;i<8;p++,i++){
         *p=rand() % 58 + 48;
     }
+}
+
+void Persona::setNombre(int name) {
+    nombre=name;
+}
+void Persona::setAltura(double height) {
+    altura=height;
+}
+void Persona::setEdad(int age) {
+    edad=age;
+}
+void Persona::setPeso(double weight) {
+    peso=weight;
+}
+void Persona::setSexo(char sex) {
+    sexo=sex;
+}
+string Persona::getNombre(){
+    return nombre;
+}
+int Persona::getEdad() {
+    return edad;
+}
+char* Persona::getDNI() {
+    return dni;
+}
+char Persona::getSexo() {
+    return sexo;
+}
+double Persona::getPeso() {
+    return peso;
+}
+double Persona::getAltura() {
+    return altura;
 }

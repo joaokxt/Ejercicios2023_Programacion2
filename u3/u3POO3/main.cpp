@@ -9,7 +9,7 @@ int main(){
     double cantidad;
     Cuenta *account;
     cout<<"-=-=-=|BANCO SANTANDER|=-=-=-"<<endl;
-    cout<<"Ingres el nombre del titular de la cuenta --> ";
+    cout<<"Ingrese el nombre del titular de la cuenta --> ";
     cin>>nombre;
     fflush(stdin);
     do{
