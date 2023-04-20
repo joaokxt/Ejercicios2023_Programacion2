@@ -1,3 +1,0 @@
-C:/Users/joaok/OneDrive/Área de Trabalho/Programas UCC/Programacion 2/u3ejemplo/cmake-build-debug/CMakeFiles/u3ejemplo.dir
-C:/Users/joaok/OneDrive/Área de Trabalho/Programas UCC/Programacion 2/u3ejemplo/cmake-build-debug/CMakeFiles/edit_cache.dir
-C:/Users/joaok/OneDrive/Área de Trabalho/Programas UCC/Programacion 2/u3ejemplo/cmake-build-debug/CMakeFiles/rebuild_cache.dir

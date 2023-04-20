@@ -23,10 +23,10 @@ Persona::Persona(std::string name, int age, char sex) {
 Persona::Persona(std::string name, int age, char id[8], char sex, double weight, double height) {
     nombre=name;
     edad=age;
-    dni=id;
     sexo=sex;
     peso=weight;
     altura=height;
+    generaDNI();
 }
 int Persona::calcularIMC() {
     double imc=peso/pow(altura,2);
