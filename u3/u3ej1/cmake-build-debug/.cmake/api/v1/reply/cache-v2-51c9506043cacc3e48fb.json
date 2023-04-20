@@ -55,7 +55,7 @@
 				}
 			],
 			"type" : "INTERNAL",
-			"value" : "c:/Users/joaok/OneDrive/Documents/A-FACULDADE/ANO 2/Programacao II/Projetos/u3ej1/cmake-build-debug"
+			"value" : "c:/Users/joaok/OneDrive/\u00c1rea de Trabalho/ejercicios2023-programacion2/u3/u3ej1/cmake-build-debug"
 		},
 		{
 			"name" : "CMAKE_CACHE_MAJOR_VERSION",
@@ -575,7 +575,7 @@
 				}
 			],
 			"type" : "STATIC",
-			"value" : "C:/Users/joaok/OneDrive/Documents/A-FACULDADE/ANO 2/Programacao II/Projetos/u3ej1/cmake-build-debug/CMakeFiles/pkgRedirects"
+			"value" : "C:/Users/joaok/OneDrive/\u00c1rea de Trabalho/ejercicios2023-programacion2/u3/u3ej1/cmake-build-debug/CMakeFiles/pkgRedirects"
 		},
 		{
 			"name" : "CMAKE_GENERATOR",
@@ -647,7 +647,7 @@
 				}
 			],
 			"type" : "INTERNAL",
-			"value" : "C:/Users/joaok/OneDrive/Documents/A-FACULDADE/ANO 2/Programacao II/Projetos/u3ej1"
+			"value" : "C:/Users/joaok/OneDrive/\u00c1rea de Trabalho/ejercicios2023-programacion2/u3/u3ej1"
 		},
 		{
 			"name" : "CMAKE_INSTALL_PREFIX",
@@ -1275,7 +1275,7 @@
 				}
 			],
 			"type" : "STATIC",
-			"value" : "C:/Users/joaok/OneDrive/Documents/A-FACULDADE/ANO 2/Programacao II/Projetos/u3ej1/cmake-build-debug"
+			"value" : "C:/Users/joaok/OneDrive/\u00c1rea de Trabalho/ejercicios2023-programacion2/u3/u3ej1/cmake-build-debug"
 		},
 		{
 			"name" : "u3ej1_IS_TOP_LEVEL",
@@ -1299,7 +1299,7 @@
 				}
 			],
 			"type" : "STATIC",
-			"value" : "C:/Users/joaok/OneDrive/Documents/A-FACULDADE/ANO 2/Programacao II/Projetos/u3ej1"
+			"value" : "C:/Users/joaok/OneDrive/\u00c1rea de Trabalho/ejercicios2023-programacion2/u3/u3ej1"
 		}
 	],
 	"kind" : "cache",

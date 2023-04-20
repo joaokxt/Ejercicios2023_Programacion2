@@ -4,23 +4,21 @@
 
 #ifndef U3EJ1_FECHA_H
 #define U3EJ1_FECHA_H
-#include <string>
 
-class fecha {
+class Fecha {
 private:
-    struct hora{
-        int h;
-        int m;
-        int s;
-    };
-    struct alarma{
-        int h;
-        int m;
-        int s;
-    };
+    int dia;
+    int mes;
+    int anio;
 public:
-    fecha();
-    
+    Fecha();
+    Fecha(int day, int month, int year);
+    int getDia();
+    int getMes();
+    int getAnio();
+    void incrementar(int dias);
+    void operator++();
+    void operator+(int dias);
 };
 
 
