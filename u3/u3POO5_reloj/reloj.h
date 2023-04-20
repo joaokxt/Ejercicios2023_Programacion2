@@ -8,15 +8,11 @@
 
 class Reloj {
 private:
-    struct hora{
-        int h;
-        int m;
-        int s;
-    };
-    struct alarma{
-        int h;
-        int m;
-    };
+    int h;
+    int m;
+    int s;
+    int alarmaH;
+    int alarmaM;
 public:
     Reloj();
     Reloj(int hora, int minuto, int segundo);

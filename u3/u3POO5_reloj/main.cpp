@@ -5,7 +5,6 @@
 using namespace std;
 
 int main() {
-    Reloj *r;
     int ing[3], i;
     for(i=0;i<3;i++){
         system("cls");
@@ -30,7 +29,7 @@ int main() {
         }
     }
     system("cls");
-    r=new Reloj(ing[0], ing[1], ing[2]);
+    Reloj r(ing[0], ing[1], ing[2]);
     for(i=0;i<2;i++){
         system("cls");
         cout<<"Ingrese el horario de la alarma: "<<endl;
@@ -47,14 +46,13 @@ int main() {
             cin>>ing[i];
         }
     }
-    r->setAlarma(ing[0], ing[1]);
+    r.setAlarma(ing[0], ing[1]);
     while(true){
         system("cls");
-        r++
-        cout<<r->getHora()<<":"<<r->getMinuto()<<":"<<r->getSegundo()<<endl;
-        if(Alarma())
+        ++r;
+        cout<<r.getHora()<<":"<<r.getMinuto()<<":"<<r.getSegundo()<<endl;
+        if(r.alarma())
             cout<<"ALARMA"<<endl;
+        Sleep(1000);
     }
-
-    return 0;
 }

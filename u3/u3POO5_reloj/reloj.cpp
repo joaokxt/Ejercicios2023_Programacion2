@@ -2,51 +2,51 @@
 using namespace std;
 
 Reloj::Reloj() {
-    hora.h=0;
-    hora.m=0;
-    hora.s=0;
-    alarma.h=12;
-    alarma.m=0;
+    h=0;
+    m=0;
+    s=0;
+    alarmaH=12;
+    alarmaM=0;
 }
 Reloj::Reloj(int hora, int minuto, int segundo) {
-    hora.h=hora;
-    hora.m=minuto;
-    hora.s=segundo;
-    alarma.h=12;
-    alarma.m=0;
+    h=hora;
+    m=minuto;
+    s=segundo;
+    alarmaH=12;
+    alarmaM=0;
 }
 void Reloj::setAlarma(int hora, int minuto) {
-    alarma.h=hora;
-    alarma.m=minuto;
+    alarmaH=hora;
+    alarmaM=minuto;
 }
 bool Reloj::alarma(){
-    if(hora.h==alarma.h && hora.m==alarma.m)
+    if(h==alarmaH && m==alarmaM)
         return true;
     return false;
 }
 void Reloj::operator++() {
-    if(hora.s==59){
-        hora.s=0;
-        if(hora.m==59){
-            hora.m=0;
-            if(hora.h==23){
-                hora.h=0;
+    if(s==59){
+        s=0;
+        if(m==59){
+            m=0;
+            if(h==23){
+                h=0;
             } else {
-                hora.h++;
+                h+=1;
             }
         } else {
-            hora.m++;
+            m+=1;
         }
     } else {
-        hora.s++;
+        s+=1;
     }
 }
 int Reloj::getHora() {
-    return hora.h;
+    return h;
 }
 int Reloj::getMinuto() {
-    return hora.m;
+    return m;
 }
 int Reloj::getSegundo() {
-    return hora.s;
+    return s;
 }
