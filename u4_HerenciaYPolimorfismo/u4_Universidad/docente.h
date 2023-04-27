@@ -1,0 +1,14 @@
+//
+// Created by joaok on 27/04/2023.
+//
+
+#ifndef EJERCICIOS2023_PROGRAMACION2_DOCENTE_H
+#define EJERCICIOS2023_PROGRAMACION2_DOCENTE_H
+
+
+class docente {
+
+};
+
+
+#endif //EJERCICIOS2023_PROGRAMACION2_DOCENTE_H

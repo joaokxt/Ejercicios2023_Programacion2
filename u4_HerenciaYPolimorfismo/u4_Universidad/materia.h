@@ -1,0 +1,14 @@
+//
+// Created by joaok on 27/04/2023.
+//
+
+#ifndef EJERCICIOS2023_PROGRAMACION2_MATERIA_H
+#define EJERCICIOS2023_PROGRAMACION2_MATERIA_H
+
+
+class materia {
+
+};
+
+
+#endif //EJERCICIOS2023_PROGRAMACION2_MATERIA_H

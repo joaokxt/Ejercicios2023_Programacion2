@@ -1,0 +1,14 @@
+//
+// Created by joaok on 27/04/2023.
+//
+
+#ifndef EJERCICIOS2023_PROGRAMACION2_ALUMNO_H
+#define EJERCICIOS2023_PROGRAMACION2_ALUMNO_H
+
+
+class alumno {
+
+};
+
+
+#endif //EJERCICIOS2023_PROGRAMACION2_ALUMNO_H
