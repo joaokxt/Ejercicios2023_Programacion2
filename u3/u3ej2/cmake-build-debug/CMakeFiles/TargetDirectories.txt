@@ -1,0 +1,3 @@
+C:/Users/joaok/OneDrive/Área de Trabalho/ejercicios2023-programacion2/u3/u3ej2/cmake-build-debug/CMakeFiles/u3ej2.dir
+C:/Users/joaok/OneDrive/Área de Trabalho/ejercicios2023-programacion2/u3/u3ej2/cmake-build-debug/CMakeFiles/edit_cache.dir
+C:/Users/joaok/OneDrive/Área de Trabalho/ejercicios2023-programacion2/u3/u3ej2/cmake-build-debug/CMakeFiles/rebuild_cache.dir
