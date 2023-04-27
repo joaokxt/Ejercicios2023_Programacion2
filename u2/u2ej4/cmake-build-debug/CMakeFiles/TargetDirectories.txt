@@ -1,3 +1,0 @@
-C:/Users/joaok/OneDrive/Documents/A-FACULDADE/ANO 2/Programacao II/Projetos/u2ej4/cmake-build-debug/CMakeFiles/u2ej4.dir
-C:/Users/joaok/OneDrive/Documents/A-FACULDADE/ANO 2/Programacao II/Projetos/u2ej4/cmake-build-debug/CMakeFiles/edit_cache.dir
-C:/Users/joaok/OneDrive/Documents/A-FACULDADE/ANO 2/Programacao II/Projetos/u2ej4/cmake-build-debug/CMakeFiles/rebuild_cache.dir

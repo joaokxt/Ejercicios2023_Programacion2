@@ -1,3 +1,0 @@
-C:/Users/joaok/Documents/Projetos/u2ej11/cmake-build-debug/CMakeFiles/u2ej11.dir
-C:/Users/joaok/Documents/Projetos/u2ej11/cmake-build-debug/CMakeFiles/edit_cache.dir
-C:/Users/joaok/Documents/Projetos/u2ej11/cmake-build-debug/CMakeFiles/rebuild_cache.dir
