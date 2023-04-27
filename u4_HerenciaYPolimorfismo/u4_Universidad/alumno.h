@@ -1,13 +1,24 @@
-//
-// Created by joaok on 27/04/2023.
-//
-
 #ifndef EJERCICIOS2023_PROGRAMACION2_ALUMNO_H
 #define EJERCICIOS2023_PROGRAMACION2_ALUMNO_H
+#include <string>
+#include "personal.h"
+#include "materia.h"
 
-
-class alumno {
-
+class Alumno:private Personal{
+private:
+    std::string carrera;
+    int edad;
+    int inscripto;
+    Materia *materias[100];
+public:
+    Alumno():Personal(){};
+    Alumno(int *id, std::string names, std::string surnames, std::string mail, std::string career, int age):Personal(id, names ,surnames, mail){};
+    std::string getCarrera();
+    int getEdad();
+    void setCarrera(std::string career);
+    void setEdad(int age);
+    void inscripcion(int *code, std::string name);
+    void cargarNota(int indice, int nota);
 };
 
 

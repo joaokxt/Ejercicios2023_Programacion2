@@ -2,19 +2,17 @@
 using namespace std;
 
 Personal::Personal() {
-    dni={0,0,0,0,0,0,0,0};
-    nombres=John;
-    apellidos=Doe;
+    /*Forma 1 con punteros*/
+    for(int *p=&dni[0];p<&dni[7];p++)
+        *p=0;
+    nombres="John";
+    apellidos="Doe";
 }
-Personal::Personal(int *id, int names, int surnames) {
-    int *init = dni;
-    int *final;
-    final = &dni[7];
-    while(init<=final){
-        *init=*id;
-        init++;
-        id++;
-    }
+Personal::Personal(int *id, string names, string surnames, string mail){
+    /*Forma 2 con punteros*/
+    int *p, *q, i;
+    for(p=dni, q=id, i=0;i<7;p++, q++, i++)
+        *p=*q;
     nombres=names;
     apellidos=surnames;
 }
@@ -27,7 +25,11 @@ std::string Personal::getNombres() {
 std::string Personal::getApellidos() {
     return apellidos;
 }
+std::string Personal::getMail(){
+    return mail;
+}
 void Personal::setDNI(int *id) {
+    /*Forma 3 con punteros*/
     int *init = dni;
     int *final;
     final = &dni[7];
@@ -37,9 +39,12 @@ void Personal::setDNI(int *id) {
         id++;
     }
 }
-void Personal::setNombres(int names) {
+void Personal::setNombres(string names) {
     nombres=names;
 }
-void Personal::setApellidos(int surnames) {
+void Personal::setApellidos(string surnames) {
     apellidos=surnames;
+}
+void Personal::setMail(string mail){
+    mail=mail;
 }
