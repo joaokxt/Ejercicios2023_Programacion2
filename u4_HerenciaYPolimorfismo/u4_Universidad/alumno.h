@@ -9,12 +9,13 @@ private:
     std::string carrera;
     int edad;
     int inscripto;
-    Materia *materias[100];
+    Materia** materias = new Materia*[100];
 public:
     Alumno():Personal(){};
     Alumno(int *id, std::string names, std::string surnames, std::string mail, std::string career, int age):Personal(id, names ,surnames, mail){};
     std::string getCarrera();
     int getEdad();
+    Materia** getMateria();
     void setCarrera(std::string career);
     void setEdad(int age);
     void inscripcion(int *code, std::string name);

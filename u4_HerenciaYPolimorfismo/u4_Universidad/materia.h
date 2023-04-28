@@ -14,6 +14,8 @@ private:
     int *notas;
 public:
     Materia(int *code, std::string name);
+    int* getCodigo();
+    std::string getNombre();
     int* getNotas();
     void setNotas(int nota);
 };

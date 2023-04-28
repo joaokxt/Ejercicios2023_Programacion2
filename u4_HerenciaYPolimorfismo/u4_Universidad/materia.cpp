@@ -8,6 +8,12 @@ Materia::Materia(int *code, string name){
     notas = new int[5];
     cargadas=0;
 }
+int* Materia::getCodigo(){
+    return codigo;
+}
+std::string Materia::getNombre(){
+    return nombre;
+}
 void Materia::setNotas(int nota){
     notas[cargadas]=nota;
     cargadas++;
