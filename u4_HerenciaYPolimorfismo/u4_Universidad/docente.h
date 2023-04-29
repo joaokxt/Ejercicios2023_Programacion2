@@ -12,6 +12,12 @@ class Docente:private Personal {
 private:
     std::string titulo;
 public:
+    Docente():Personal(){};
+    Docente(int id, std::string names, std::string surnames, std::string mail, std::string degree):Personal(id, names ,surnames, mail){};
+    ~Docente();
+    std::string getTitulo();
+    void setTitulo(std::string degree);
+    void inscripcion(Materia** materias, char* code);
 };
 
 

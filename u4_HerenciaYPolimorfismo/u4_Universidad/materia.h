@@ -22,7 +22,7 @@ public:
     char* getCodigo();
     std::string getNombre();
     int* getNotas(int dni);
-    Alumno* getAlumnos();
+    Alumno** getAlumnos();
     Docente* getTitular();
     void setNotas(int nota, int dni);
     void setAlumno(Alumno* alumno);

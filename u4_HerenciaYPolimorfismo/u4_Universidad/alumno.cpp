@@ -4,7 +4,7 @@
 using namespace std;
 
 Alumno::Alumno():Personal(){
-    carrera="Ninguna";
+    carrera="Sin carrera especificada";
     edad=0;
     inscripto=0;
 }
@@ -25,7 +25,7 @@ void Alumno::setCarrera(string career){
 void Alumno::setEdad(int age){
     edad=age;
 }
-void Alumno::inscripcion(Materia** materias, char* code, string name){
+void Alumno::inscripcion(Materia** materias, char* code){
     int i;
     for(i=0;i<100; i++)
         if(materias[i]->getCodigo()==code)
