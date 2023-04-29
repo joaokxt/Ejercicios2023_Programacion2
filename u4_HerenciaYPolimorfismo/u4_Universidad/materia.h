@@ -5,19 +5,30 @@
 #ifndef EJERCICIOS2023_PROGRAMACION2_MATERIA_H
 #define EJERCICIOS2023_PROGRAMACION2_MATERIA_H
 #include <string>
+#include "alumno.h"
+#include "docente.h"
 
 class Materia {
 private:
-    int codigo[8];
+    char* codigo;
     std::string nombre;
-    int cargadas;
-    int *notas;
+    int** notas;
+    Alumno** alumnos; /*Arreglo de apuntadores a Alumnos*/
+    Docente* titular;
+    int inscriptos;
 public:
-    Materia(int *code, std::string name);
-    int* getCodigo();
+    Materia(char *code, std::string name);
+    ~Materia();
+    char* getCodigo();
     std::string getNombre();
-    int* getNotas();
-    void setNotas(int nota);
+    int* getNotas(int dni);
+    Alumno* getAlumnos();
+    Docente* getTitular();
+    void setNotas(int nota, int dni);
+    void setAlumno(Alumno* alumno);
+    void setTitular(Docente* docente);
+    bool hayCupo();
+    bool hayTitular();
 };
 
 

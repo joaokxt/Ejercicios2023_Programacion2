@@ -1,28 +1,61 @@
 #include "materia.h"
 using namespace std;
 
-Materia::Materia(int *code, string name){
-    int *p, *q, i;
+Materia::Materia(char *code, string name){
+    char *p, *q;
+    int i, j;
+    codigo = new char[8];
     for(p=codigo, q=code, i=0;i<7;p++, q++, i++)
         *p=*q;
-    notas = new int[5];
-    cargadas=0;
+    notas = new int*[100];
+    for(i=0;i<100;i++){
+        alumnos[i]=nullptr;
+        notas[i] = new int[5];
+        for(j=0; j<5; j++)
+            notas[i][j]=0;
+    }
+    titular=nullptr;
+    inscriptos=0;
 }
-int* Materia::getCodigo(){
+char* Materia::getCodigo(){
     return codigo;
 }
 std::string Materia::getNombre(){
     return nombre;
 }
-void Materia::setNotas(int nota){
-    notas[cargadas]=nota;
-    cargadas++;
+void Materia::setNotas(int nota, int dni){
+    int i, j;
+    for(i=0;i<100;i++)
+        if(notas[i][0]==dni)
+            for(j=1;j<5;j++)
+                if(notas[i][j]==0){
+                    notas[i][j]=nota;
+                    return;
+                }
 }
-int* Materia::getNotas(){
-    /*Para no retornar el array de 100*/
-    int *result, *p, i;
-    result = new int [cargadas];
-    for(p=notas, i=0;i<cargadas;p++,i++)
-        *(result+i)=*p;
+int* Materia::getNotas(int dni){
+    int *result, *p, i, j;
+    result = new int [4];
+    for(i=0;i<100;i++)
+        if(notas[i][0]==dni)
+            for(p=0,j=0;j<4;p++, j++)
+                result[j]=notas[i][j+1];
     return result;
+}
+void Materia::setAlumno(Alumno* alumno){
+    alumnos[inscriptos]=alumno;
+    inscriptos++;  
+}
+void Materia::setTitular(Docente* docente){
+    titular = docente;
+}
+bool Materia::hayCupo(){
+    if(inscriptos=100)
+        return false;
+    return true;
+}
+bool Materia::hayTitular(){
+    if(titular==nullptr)
+        return false;
+    return true;
 }

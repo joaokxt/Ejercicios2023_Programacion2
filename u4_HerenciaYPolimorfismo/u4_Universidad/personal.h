@@ -7,19 +7,21 @@
 #include <string>
 
 class Personal {
-private:
-    int dni[8];
+protected:
+    int dni;
     std::string nombres;
     std::string apellidos;
     std::string mail;
+    int inscripto;
 public:
     Personal();
-    Personal(int *id, std::string names, std::string surnames, std::string mail);
-    int* getDNI();
+    Personal(int id, std::string names, std::string surnames, std::string mail);
+    ~Personal();
+    int getDNI();
     std::string getNombres();
     std::string getApellidos();
     std::string getMail();
-    void setDNI(int *id);
+    void setDNI(int id);
     void setNombres(std::string names);
     void setApellidos(std::string surnames);
     void setMail(std::string mail);

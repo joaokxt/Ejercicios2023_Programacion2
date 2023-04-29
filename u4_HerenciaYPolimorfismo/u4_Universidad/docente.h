@@ -4,10 +4,14 @@
 
 #ifndef EJERCICIOS2023_PROGRAMACION2_DOCENTE_H
 #define EJERCICIOS2023_PROGRAMACION2_DOCENTE_H
+#include "personal.h"
+#include "materia.h"
+#include <string>
 
-
-class docente {
-
+class Docente:private Personal {
+private:
+    std::string titulo;
+public:
 };
 
 
