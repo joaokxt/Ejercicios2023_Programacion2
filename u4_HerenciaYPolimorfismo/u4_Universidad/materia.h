@@ -5,21 +5,23 @@
 #ifndef EJERCICIOS2023_PROGRAMACION2_MATERIA_H
 #define EJERCICIOS2023_PROGRAMACION2_MATERIA_H
 #include <string>
-#include "alumno.h"
-#include "docente.h"
 
+/*Declaraciones previas a fin de evitar dependencias ciclicas*/
+class Personal;
+class Alumno;
+class Docente;
 class Materia {
 private:
-    int* codigo;
+    char* codigo;
     std::string nombre;
     int** notas;
     Alumno** alumnos; /*Arreglo de apuntadores a Alumnos*/
     Docente* titular;
     int inscriptos;
 public:
-    Materia(int *code, std::string name);
+    Materia(char* code, std::string name);
     ~Materia();
-    int* getCodigo();
+    char* getCodigo();
     std::string getNombre();
     int* getNotas(int dni);
     Alumno** getAlumnos();

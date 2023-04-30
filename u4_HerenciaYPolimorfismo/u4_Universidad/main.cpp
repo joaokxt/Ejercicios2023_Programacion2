@@ -11,21 +11,22 @@ using namespace std;
 Materia** materias;
 Alumno** alumnos;
 Docente** docentes;
-int opcion, cantAlumnos=0, cantDocentes=0, cantMaterias=0;
+int opcion, cantAlumnos=0, cantDocentes=0, cantMaterias=0, i, j;
 
 void Alta(){
-    int dni, edad, i;
+    int dni, edad, n;
     string nombre, apellido, mail, carrera, titulo;
-    int* code;
-    code = new int[8];
+    char* code;
+    code = new char[8];
 
     system("cls");
     cout<<"-=-=-=-=|ALTA|=-=-=-=-"<<endl;
-    cout<<"Desea dar de alta a un: \n1. Alumno \n2.docente \n3.Cátedra?"<<endl;
-    cout<<">>> ";
+    cout<<"Desea dar de alta a un: \n1.Alumno \n2.Docente \n3.Catedra"<<endl;
+    cout<<"\n>>> ";
     cin>>opcion;
     switch(opcion){
         case 1:
+            cantAlumnos++;
             cout<<"-=-=-=-=|ALTA ALUMNO|=-=-=-=-"<<endl;
             cout<<"Nombre: ";
             cin>>nombre; /*USAR GETLINE PARA PRESERVAR ESPACIOS*/
@@ -42,6 +43,7 @@ void Alta(){
             alumnos[cantAlumnos] = new Alumno(dni, nombre, apellido, mail, carrera, edad);
             break;
         case 2:
+            cantDocentes++;
             cout<<"-=-=-=-=|ALTA DOCENTE|=-=-=-=-"<<endl;
             cout<<"Nombre: ";
             cin>>nombre; /*USAR GETLINE PARA PRESERVAR ESPACIOS*/
@@ -56,24 +58,53 @@ void Alta(){
             docentes[cantDocentes] = new Docente(dni, nombre, apellido, mail, titulo);
             break;
         case 3:
+            cantMaterias++;
             cout<<"-=-=-=-=|ALTA MATERIA|=-=-=-=-"<<endl;
-            cout<<"Nombre";
+            cout<<"Nombre: ";
             cin>>nombre;
             cout<<"El codigo asignado es: ";
             for(i=0;i<8;i++){
-                code[i]= rand()%10;
+                n=rand()%(57-49+1)+49;
+                code[i]= static_cast<char>(n);
                 cout<<code[i];
             }
             cout<<endl;
             materias[cantMaterias] = new Materia(code, nombre);
+            cout<<"Ingrese algo para continuar >>> ";
+            cin>>opcion;
             break;
     }
     return;
 }
 
 void Inscribir(){
+    char* code;
+    code = new char[8];
     system("cls");
     cout<<"-=-=-=-=|INSCRIPCION A MATERIA|=-=-=-=-"<<endl;
+    cout<<"Ingrese el DNI del alumno a inscribir >>>";
+    cin>>opcion;
+    for(j=0;j<cantAlumnos;j++)
+        if(alumnos[j]->getDNI()==opcion)
+           break;
+    cout<<"Seleccione la materia: "<<endl;
+    for(i=0;i<cantMaterias;i++){
+        if(materias[i]->hayCupo()==true)
+            cout<<"-=-=-=-=--=-=-=-=--=-=-=-=--=-=-=-=--=-=-=-=-"<<endl;
+            cout<<"NOMBRE: "<<materias[i]->getNombre()<<endl;
+            cout<<"CÓDIGO: "<<materias[i]->getCodigo()<<endl;
+            if(materias[i]->getTitular()!=nullptr)
+                cout<<"DOCENTE TITULAR: "<<materias[i]->getTitular()<<endl;
+            else
+                cout<<"DOCENTE TITULAR: SIN DOCENTE ASIGNADO"<<endl;
+            cout<<"-=-=-=-=--=-=-=-=--=-=-=-=--=-=-=-=--=-=-=-=-"<<endl;
+    }
+    cout<<"Ingrese el código de la materia seleccionada"<<endl;
+    cout<<">>> ";
+    cin>>code;
+    cout<<"Ingrese algo para continuar >>>";
+    cin>>opcion;
+    return;
 }
 
 void Anotar(){
@@ -94,6 +125,7 @@ int main(){
     materias = new Materia*[100];
     alumnos = new Alumno*[100];
     docentes = new Docente*[100];
+    fflush(stdin);
     while(true){
         system("cls");
         cout<<"-=-=-=-=|UCC|=-=-=-=-"<<endl;

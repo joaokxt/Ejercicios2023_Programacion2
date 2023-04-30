@@ -1,8 +1,7 @@
-//
-// Created by joaok on 27/04/2023.
-//
-
+#include "personal.h"
+#include "alumno.h"
 #include "docente.h"
+#include "materia.h"
 using namespace std;
 
 Docente::Docente():Personal(){
@@ -17,7 +16,7 @@ string Docente::getTitulo(){
 void Docente::setTitulo(string degree){
     titulo=degree;
 }
-void Docente::inscripcion(Materia** materias, int* code){
+void Docente::inscripcion(Materia** materias, char* code){
     int i, j, n;
     for(i=0;i<100; i++){
         n=0;
@@ -28,5 +27,5 @@ void Docente::inscripcion(Materia** materias, int* code){
                 materias[i]->setTitular(this);
         } 
     }
-        
+} 
             

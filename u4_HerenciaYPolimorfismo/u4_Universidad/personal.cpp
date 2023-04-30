@@ -11,6 +11,9 @@ Personal::Personal(int id, string names, string surnames, string mail){
     nombres=names;
     apellidos=surnames;
 }
+Personal::~Personal(){
+    
+}
 int Personal::getDNI() {
     return dni;
 }

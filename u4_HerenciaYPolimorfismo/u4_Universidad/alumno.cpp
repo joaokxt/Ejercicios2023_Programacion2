@@ -1,6 +1,7 @@
 #include "personal.h"
 #include "alumno.h"
 #include "materia.h"
+#include "docente.h"
 using namespace std;
 
 Alumno::Alumno():Personal(){
@@ -25,7 +26,7 @@ void Alumno::setCarrera(string career){
 void Alumno::setEdad(int age){
     edad=age;
 }
-void Alumno::inscripcion(Materia** materias, int* code){
+void Alumno::inscripcion(Materia** materias, char* code){
     int i, j, n;
     for(i=0;i<100; i++){
         n=0;
@@ -38,7 +39,7 @@ void Alumno::inscripcion(Materia** materias, int* code){
     }
     inscripto++;
 }
-void Alumno::cargarNota(Materia** materias, int* code, int nota){
+void Alumno::cargarNota(Materia** materias, char* code, int nota){
     int i, j, n;
     for(i=0;i<100; i++){
         n=0;
@@ -49,4 +50,4 @@ void Alumno::cargarNota(Materia** materias, int* code, int nota){
                 materias[i]->setNotas(nota, dni);
         } 
     }
-      
+}   

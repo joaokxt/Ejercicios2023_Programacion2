@@ -1,9 +1,14 @@
+#include "personal.h"
+#include "alumno.h"
+#include "docente.h"
 #include "materia.h"
 using namespace std;
 
-Materia::Materia(int *code, string name){
-    int *p, *q, i, j;
-    codigo = new int[8];
+Materia::Materia(char *code, string name){
+    char *p, *q;
+    int i, j;
+    codigo = new char[8];
+    nombre=name;
     for(p=codigo, q=code, i=0;i<7;p++, q++, i++)
         *p=*q;
     notas = new int*[100];
@@ -16,7 +21,7 @@ Materia::Materia(int *code, string name){
     titular=nullptr;
     inscriptos=0;
 }
-int* Materia::getCodigo(){
+char* Materia::getCodigo(){
     return codigo;
 }
 std::string Materia::getNombre(){
@@ -55,7 +60,7 @@ void Materia::setTitular(Docente* docente){
     titular = docente;
 }
 bool Materia::hayCupo(){
-    if(inscriptos=100)
+    if(inscriptos==100)
         return false;
     return true;
 }
