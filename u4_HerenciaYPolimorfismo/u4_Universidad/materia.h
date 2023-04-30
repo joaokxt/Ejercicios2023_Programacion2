@@ -10,16 +10,16 @@
 
 class Materia {
 private:
-    char* codigo;
+    int* codigo;
     std::string nombre;
     int** notas;
     Alumno** alumnos; /*Arreglo de apuntadores a Alumnos*/
     Docente* titular;
     int inscriptos;
 public:
-    Materia(char *code, std::string name);
+    Materia(int *code, std::string name);
     ~Materia();
-    char* getCodigo();
+    int* getCodigo();
     std::string getNombre();
     int* getNotas(int dni);
     Alumno** getAlumnos();

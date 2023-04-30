@@ -17,7 +17,7 @@ public:
     ~Docente();
     std::string getTitulo();
     void setTitulo(std::string degree);
-    void inscripcion(Materia** materias, char* code);
+    void inscripcion(Materia** materias, int* code);
 };
 
 

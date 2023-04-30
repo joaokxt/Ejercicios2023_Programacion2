@@ -1,5 +1,7 @@
 #include <iostream>
-#include <random>
+#include <stdio.h>
+#include <stdlib.h>
+#include <time.h>
 #include "personal.h"
 #include "alumno.h"
 #include "docente.h"
@@ -9,13 +11,15 @@ using namespace std;
 Materia** materias;
 Alumno** alumnos;
 Docente** docentes;
-int opcion, cantAlumnos=0, cantDocentes=0;
+int opcion, cantAlumnos=0, cantDocentes=0, cantMaterias=0;
 
 void Alta(){
-    int dni, edad;
+    int dni, edad, i;
     string nombre, apellido, mail, carrera, titulo;
-    char* code;
-    code = new char[8];
+    int* code;
+    code = new int[8];
+
+    system("cls");
     cout<<"-=-=-=-=|ALTA|=-=-=-=-"<<endl;
     cout<<"Desea dar de alta a un: \n1. Alumno \n2.docente \n3.Cátedra?"<<endl;
     cout<<">>> ";
@@ -55,13 +59,21 @@ void Alta(){
             cout<<"-=-=-=-=|ALTA MATERIA|=-=-=-=-"<<endl;
             cout<<"Nombre";
             cin>>nombre;
-            /*GENERAR CODIGO ALFANUMERICO ALEATORIO*/
+            cout<<"El codigo asignado es: ";
+            for(i=0;i<8;i++){
+                code[i]= rand()%10;
+                cout<<code[i];
+            }
+            cout<<endl;
+            materias[cantMaterias] = new Materia(code, nombre);
             break;
     }
+    return;
 }
 
 void Inscribir(){
-
+    system("cls");
+    cout<<"-=-=-=-=|INSCRIPCION A MATERIA|=-=-=-=-"<<endl;
 }
 
 void Anotar(){
@@ -78,10 +90,12 @@ void Modificar(){
 
 int main(){
     int i;
+    srand(time(NULL));
     materias = new Materia*[100];
     alumnos = new Alumno*[100];
     docentes = new Docente*[100];
     while(true){
+        system("cls");
         cout<<"-=-=-=-=|UCC|=-=-=-=-"<<endl;
         cout<<"1. Alta "<<endl;
         cout<<"2. Inscribir a materia"<<endl;

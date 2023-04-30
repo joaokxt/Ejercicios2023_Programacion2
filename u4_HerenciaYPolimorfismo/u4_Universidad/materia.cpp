@@ -1,10 +1,9 @@
 #include "materia.h"
 using namespace std;
 
-Materia::Materia(char *code, string name){
-    char *p, *q;
-    int i, j;
-    codigo = new char[8];
+Materia::Materia(int *code, string name){
+    int *p, *q, i, j;
+    codigo = new int[8];
     for(p=codigo, q=code, i=0;i<7;p++, q++, i++)
         *p=*q;
     notas = new int*[100];
@@ -17,7 +16,7 @@ Materia::Materia(char *code, string name){
     titular=nullptr;
     inscriptos=0;
 }
-char* Materia::getCodigo(){
+int* Materia::getCodigo(){
     return codigo;
 }
 std::string Materia::getNombre(){

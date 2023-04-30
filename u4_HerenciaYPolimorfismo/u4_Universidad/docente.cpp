@@ -17,9 +17,16 @@ string Docente::getTitulo(){
 void Docente::setTitulo(string degree){
     titulo=degree;
 }
-void Docente::inscripcion(Materia** materias, char* code){
-    int i;
-    for(i=0;i<100; i++)
-        if(materias[i]->getCodigo()==code)
-            materias[i]->setTitular(this);
-}
+void Docente::inscripcion(Materia** materias, int* code){
+    int i, j, n;
+    for(i=0;i<100; i++){
+        n=0;
+        for(j=0;j<8;j++){
+            if(materias[i]->getCodigo()[j]==code[j])
+                n++;
+            if(n==8)
+                materias[i]->setTitular(this);
+        } 
+    }
+        
+            
