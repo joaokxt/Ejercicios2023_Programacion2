@@ -26,28 +26,16 @@ void Alumno::setCarrera(string career){
 void Alumno::setEdad(int age){
     edad=age;
 }
-void Alumno::inscripcion(Materia** materias, char* code){
+void Alumno::inscripcion(Materia** materias, int code){
     int i, j, n;
-    for(i=0;i<100; i++){
-        n=0;
-        for(j=0;j<8;j++){
-            if(materias[i]->getCodigo()[j]==code[j])
-                n++;
-            if(n==8)
-                materias[i]->setAlumno(this);
-        } 
-    }
+    for(i=0;i<100; i++)
+        if(materias[i]->getCodigo()==code)
+            materias[i]->setAlumno(this);
     inscripto++;
 }
-void Alumno::cargarNota(Materia** materias, char* code, int nota){
+void Alumno::cargarNota(Materia** materias, int code, int nota){
     int i, j, n;
-    for(i=0;i<100; i++){
-        n=0;
-        for(j=0;j<8;j++){
-            if(materias[i]->getCodigo()[j]==code[j])
-                n++;
-            if(n==8)
-                materias[i]->setNotas(nota, dni);
-        } 
-    }
+    for(i=0;i<100; i++)
+        if(materias[i]->getCodigo()==code)
+             materias[i]->setNotas(nota, dni);
 }   

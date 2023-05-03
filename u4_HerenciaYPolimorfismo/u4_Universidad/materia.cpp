@@ -6,26 +6,22 @@ using namespace std;
 
 Materia::Materia(){
     int i, j;
-    codigo=new char[8];
     nombre="Sin Nombre";
+    codigo = 0;
     notas=new int*[100];
     for(i=0;i<100;i++){
         alumnos[i]=nullptr;
         notas[i]=new int[5];
-        codigo[i]='0';
         for(j=0;j<5;j++)
             notas[i][j]=0;
     }
     titular=nullptr;
     inscriptos=0;
 }
-Materia::Materia(char *code, string name){
-    char *p, *q;
+Materia::Materia(int code, string name){
     int i, j;
-    codigo = new char[8];
-    nombre=name;
-    for(p=codigo, q=code, i=0;i<7;p++, q++, i++)
-        *p=*q;
+    nombre = name;
+    codigo = code;
     notas = new int*[100];
     for(i=0;i<100;i++){
         alumnos[i] = nullptr;
@@ -39,7 +35,7 @@ Materia::Materia(char *code, string name){
 Materia::~Materia(){
     
 }
-char* Materia::getCodigo(){
+int Materia::getCodigo(){
     return codigo;
 }
 std::string Materia::getNombre(){

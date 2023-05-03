@@ -15,7 +15,7 @@ Docente* docentes[100];
 int opcion, cantAlumnos=0, cantDocentes=0, cantMaterias=0, i, j;
 
 void Alta(){
-    int dni, edad, n;
+    int dni, edad, n, code;
     string nombre, apellido, mail, carrera, titulo;
 
     system("cls");
@@ -57,20 +57,14 @@ void Alta(){
             cantDocentes++;
             break;
         case 3:
-            char* code;
-            code = new char[8];
             cout<<"-=-=-=-=|ALTA MATERIA|=-=-=-=-"<<endl;
             cout<<"Nombre: ";
             cin>>nombre;
             cout<<"El codigo asignado es: ";
-            for(i=0;i<8;i++){
-                n=rand()%(57-49+1)+49;
-                code[i]=static_cast<char>(n);
-                cout<<code;
-            }
+            code=rand()%(999-100+1)+100;
+            cout<<code;
             materias[cantMaterias] = new Materia(code, nombre);
             cantMaterias++;
-            delete[] code;
             cout<<"\nIngrese algo para continuar >>> ";
             cin>>opcion;
             break;
@@ -80,8 +74,7 @@ void Alta(){
 
 void Inscribir(){
     bool valido;
-    char* code;
-    code = new char[8];
+    int code;
     system("cls");
     fflush(stdin);
 
@@ -117,7 +110,7 @@ void Inscribir(){
     }
     cout<<"Ingrese el código de la materia seleccionada"<<endl;
     cout<<">>> ";
-    cin.getline(code,8);
+    cin>>code;
     alumnos[j]->inscripcion(materias, code);
 
     system("cls");
@@ -129,8 +122,7 @@ void Inscribir(){
 
 void Anotar(){
     bool valido;
-    char* code;
-    code = new char[8];
+    int code;
     system("cls");
     fflush(stdin);
 
@@ -162,7 +154,7 @@ void Anotar(){
     }
     cout<<"Ingrese el código de la materia seleccionada"<<endl;
     cout<<">>> ";
-    cin.getline(code,8);
+    cin>>code;
     docentes[j]->inscripcion(materias, code);
 
     system("cls");

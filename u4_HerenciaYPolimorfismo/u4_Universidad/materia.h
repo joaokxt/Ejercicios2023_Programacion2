@@ -12,7 +12,7 @@ class Alumno;
 class Docente;
 class Materia {
 private:
-    char* codigo;
+    int codigo;
     std::string nombre;
     int** notas;
     Alumno** alumnos; /*Arreglo de apuntadores a Alumnos*/
@@ -20,9 +20,9 @@ private:
     int inscriptos;
 public:
     Materia();
-    Materia(char* code, std::string name);
+    Materia(int code, std::string name);
     ~Materia();
-    char* getCodigo();
+    int getCodigo();
     std::string getNombre();
     int* getNotas(int dni);
     Alumno** getAlumnos();
