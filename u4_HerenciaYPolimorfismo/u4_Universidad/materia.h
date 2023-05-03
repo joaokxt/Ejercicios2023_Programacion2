@@ -19,6 +19,7 @@ private:
     Docente* titular;
     int inscriptos;
 public:
+    Materia();
     Materia(char* code, std::string name);
     ~Materia();
     char* getCodigo();

@@ -4,6 +4,21 @@
 #include "materia.h"
 using namespace std;
 
+Materia::Materia(){
+    int i, j;
+    codigo=new char[8];
+    nombre="Sin Nombre";
+    notas=new int*[100];
+    for(i=0;i<100;i++){
+        alumnos[i]=nullptr;
+        notas[i]=new int[5];
+        codigo[i]='0';
+        for(j=0;j<5;j++)
+            notas[i][j]=0;
+    }
+    titular=nullptr;
+    inscriptos=0;
+}
 Materia::Materia(char *code, string name){
     char *p, *q;
     int i, j;
@@ -20,6 +35,9 @@ Materia::Materia(char *code, string name){
     }
     titular=nullptr;
     inscriptos=0;
+}
+Materia::~Materia(){
+    
 }
 char* Materia::getCodigo(){
     return codigo;
