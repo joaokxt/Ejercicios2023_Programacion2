@@ -18,7 +18,7 @@ public:
     void setCarrera(std::string career);
     void setEdad(int age);
     void inscripcion(Materia** materias, int code);
-    void cargarNota(Materia** materias, int code, int nota);
+    void cargarNota(Materia** materias, int code, int nota, int lim);
 };
 
 

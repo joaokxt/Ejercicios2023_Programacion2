@@ -12,7 +12,7 @@ using namespace std;
 Materia* materias[100];
 Alumno* alumnos[100];
 Docente* docentes[100];
-int opcion, cantAlumnos=0, cantDocentes=0, cantMaterias=0, i, j;
+int opcion, cantAlumnos=0, cantDocentes=0, cantMaterias=0, i, j, k;
 
 void Alta(){
     int dni, edad, n, code;
@@ -65,7 +65,8 @@ void Alta(){
             cout<<code;
             materias[cantMaterias] = new Materia(code, nombre);
             cantMaterias++;
-            cout<<"\nIngrese algo para continuar >>> ";
+            cout<<"\nIngrese un número para continuar >>> ";
+            fflush(stdin);
             cin>>opcion;
             break;
     }
@@ -79,21 +80,23 @@ void Inscribir(){
     fflush(stdin);
 
     cout<<"-=-=-=-=|INSCRIPCION A MATERIA|=-=-=-=-"<<endl;
-    cout<<"Ingrese el DNI del alumno a inscribir >>>";
+    cout<<"Ingrese el DNI del alumno a inscribir >>> ";
     cin>>opcion;
     do{
+        valido = false;
         for(j=0;j<cantAlumnos;j++)
             if(alumnos[j]->getDNI()==opcion){
                 valido=true;
                 break;
             }
-        valido=false;
-        cout<<"El alumno no existe!"<<endl;
-        cout<<"Ingrese el DNI del alumno o ingrese 0 para salir"<<endl;
-        cout<<">>> ";
-        cin>>opcion;
-        if(opcion==0)
-            return;
+        if(!valido){
+            cout<<"El alumno no existe!"<<endl;
+            cout<<"Ingrese el DNI del alumno o ingrese 0 para salir"<<endl;
+            cout<<">>> ";
+            cin>>opcion;
+            if(opcion==0)
+                return;
+        }
     }while(!valido);
 
     cout<<"Seleccione la materia: "<<endl;
@@ -101,21 +104,24 @@ void Inscribir(){
         if(materias[i]->hayCupo()==true)
             cout<<"-=-=-=-=--=-=-=-=--=-=-=-=--=-=-=-=--=-=-=-=-"<<endl;
             cout<<"NOMBRE: "<<materias[i]->getNombre()<<endl;
-            cout<<"CÓDIGO: "<<materias[i]->getCodigo()<<endl;
+            cout<<"CODIGO: "<<materias[i]->getCodigo()<<endl;
             if(materias[i]->getTitular()!=nullptr)
-                cout<<"DOCENTE TITULAR: "<<materias[i]->getTitular()<<endl;
+                cout<<"DOCENTE TITULAR: "<<materias[i]->getTitular()->getNombres()<<endl;
             else
                 cout<<"DOCENTE TITULAR: SIN DOCENTE ASIGNADO"<<endl;
             cout<<"-=-=-=-=--=-=-=-=--=-=-=-=--=-=-=-=--=-=-=-=-"<<endl;
     }
-    cout<<"Ingrese el código de la materia seleccionada"<<endl;
+    cout<<"Ingrese el codigo de la materia seleccionada"<<endl;
     cout<<">>> ";
     cin>>code;
-    alumnos[j]->inscripcion(materias, code);
+    for(i=0;i<cantMaterias;i++){
+        if(materias[i]->getCodigo()==code)
+            materias[i]->setAlumno(alumnos[j]);
+    }
 
     system("cls");
-    cout<<"INSCRIPCIÓN EXITOSA"<<endl;
-    cout<<"Ingrese algo para continuar >>>";
+    cout<<"INSCRIPCION EXITOSA"<<endl;
+    cout<<"Ingrese un numero para continuar >>>";
     cin>>opcion;
     return;
 }
@@ -127,21 +133,24 @@ void Anotar(){
     fflush(stdin);
 
     cout<<"-=-=-=-=|ANOTAR TITULAR|=-=-=-=-"<<endl;
-    cout<<"Ingrese el DNI del docente a anotar >>>";
+    cout<<"Ingrese el DNI del docente a anotar >>> ";
     cin>>opcion;
     do{
+        valido = false;
         for(j=0;j<cantDocentes;j++)
             if(docentes[j]->getDNI()==opcion){
                 valido=true;
                 break;
             }
-        valido=false;
-        cout<<"El docente no existe!"<<endl;
-        cout<<"Ingrese el DNI del docente o ingrese 0 para salir"<<endl;
-        cout<<">>> ";
-        cin>>opcion;
-        if(opcion==0)
-            return;
+        if(!valido){
+            cout<<"El docente no existe!"<<endl;
+            cout<<"Ingrese el DNI del docente o ingrese 0 para salir"<<endl;
+            cout<<">>> ";
+            cin>>opcion;
+            if(opcion==0)
+                return; 
+        }
+        
     }while(!valido);
 
     cout<<"Seleccione la materia: "<<endl;
@@ -149,23 +158,75 @@ void Anotar(){
         if(materias[i]->hayTitular()==false)
             cout<<"-=-=-=-=--=-=-=-=--=-=-=-=--=-=-=-=--=-=-=-=-"<<endl;
             cout<<"NOMBRE: "<<materias[i]->getNombre()<<endl;
-            cout<<"CÓDIGO: "<<materias[i]->getCodigo()<<endl;
+            cout<<"CODIGO: "<<materias[i]->getCodigo()<<endl;
             cout<<"-=-=-=-=--=-=-=-=--=-=-=-=--=-=-=-=--=-=-=-=-"<<endl;
     }
-    cout<<"Ingrese el código de la materia seleccionada"<<endl;
+    cout<<"Ingrese el codigo de la materia seleccionada"<<endl;
     cout<<">>> ";
     cin>>code;
-    docentes[j]->inscripcion(materias, code);
+    for(i=0;i<cantMaterias;i++){
+        if(materias[i]->getCodigo()==code)
+            materias[i]->setTitular(docentes[j]);
+    }
 
     system("cls");
-    cout<<"INSCRIPCIÓN EXITOSA"<<endl;
-    cout<<"Ingrese algo para continuar >>>";
+    cout<<"INSCRIPCION EXITOSA"<<endl;
+    cout<<"Ingrese un numero para continuar >>>";
     cin>>opcion;
     return;
 }
 
 void Cargar(){
+    bool valido;
+    int code, dni, nota;
+    system("cls");
+    fflush(stdin);
 
+    cout<<"-=-=-=-=|CARGAR NOTA|=-=-=-=-"<<endl;
+    cout<<"Ingrese el DNI del alumno >>> ";
+    cin>>dni;
+    do{
+        valido = false;
+        for(j=0;j<cantAlumnos;j++)
+            if(alumnos[j]->getDNI()==dni){
+                valido=true;
+                break;
+            }
+        if(!valido){
+            cout<<"El alumno no existe!"<<endl;
+            cout<<"Ingrese el DNI del alumno o ingrese 0 para salir"<<endl;
+            cout<<">>> ";
+            cin>>dni;
+            if(dni==0)
+                return; 
+        }
+        
+    }while(!valido);
+
+    cout<<"Seleccione la materia: "<<endl;
+    for(i=0;i<cantMaterias;i++){
+        for(k=0;k<materias[i]->getInscriptos();k++){
+            if(materias[i]->getAlumnos()[k]->getDNI()==dni)
+            cout<<"-=-=-=-=--=-=-=-=--=-=-=-=--=-=-=-=--=-=-=-=-"<<endl;
+            cout<<"NOMBRE: "<<materias[i]->getNombre()<<endl;
+            cout<<"CODIGO: "<<materias[i]->getCodigo()<<endl;
+            cout<<"NOTAS: ["<<materias[i]->getNotas(dni)[0]<<"] ["<<materias[i]->getNotas(dni)[1]<<"] ["<<materias[i]->getNotas(dni)[2]<<"]"<<endl;
+            cout<<"-=-=-=-=--=-=-=-=--=-=-=-=--=-=-=-=--=-=-=-=-"<<endl;
+        }
+        
+    }
+    cout<<"Ingrese el codigo de la materia seleccionada"<<endl;
+    cout<<">>> ";
+    cin>>code;
+    cout<<"Ingrese la nota"<<endl;
+    cin>>nota;
+    alumnos[j]->cargarNota(materias, code, nota, cantMaterias);
+
+    system("cls");
+    cout<<"CARGA EXITOSA"<<endl;
+    cout<<"Ingrese un numero para continuar >>>";
+    cin>>opcion;
+    return;
 }
 
 void Modificar(){
