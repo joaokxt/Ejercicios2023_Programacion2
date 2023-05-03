@@ -11,13 +11,14 @@ private:
     int edad;
 public:
     Alumno();
-    Alumno(int id, std::string names, std::string surnames, std::string mail, std::string career, int age);
+    Alumno(int id, std::string names, std::string surnames, std::string email, std::string career, int age);
     ~Alumno();
     std::string getCarrera();
     int getEdad();
+    Materia** getMaterias(Materia** materias, int lim);
     void setCarrera(std::string career);
     void setEdad(int age);
-    void inscripcion(Materia** materias, int code);
+    void inscripcion(Materia** materias, int code, int lim);
     void cargarNota(Materia** materias, int code, int nota, int lim);
 };
 

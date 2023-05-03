@@ -7,19 +7,34 @@ using namespace std;
 Docente::Docente():Personal(){
     titulo="Sin titulo definido";
 }
-Docente::Docente(int id, std::string names, std::string surnames, std::string mail, std::string degree):Personal(id, names ,surnames, mail){
+Docente::Docente(int id, std::string names, std::string surnames, std::string email, std::string degree):Personal(id, names ,surnames, email){
     titulo=degree;
-}   
+} 
+Docente::~Docente(){
+
+}  
 string Docente::getTitulo(){
     return titulo;
+}
+Materia** Docente::getMaterias(Materia** materias, int lim){
+    Materia** anotadas;
+    anotadas = new Materia*[inscripciones];
+    int i, j, k=0;
+    for(i=0; i<lim; i++)
+        if(materias[i]->getTitular()->getDNI() == dni){
+                anotadas[k]=materias[i];
+                k++;
+            }
+    return anotadas;
 }
 void Docente::setTitulo(string degree){
     titulo=degree;
 }
-void Docente::inscripcion(Materia** materias, int code){
+void Docente::inscripcion(Materia** materias, int code, int lim){
     int i, j, n;
-    for(i=0;i<100; i++)
+    for(i=0;i<lim; i++)
         if(materias[i]->getCodigo()==code)
             materias[i]->setTitular(this);
+    inscripciones++;
 } 
             

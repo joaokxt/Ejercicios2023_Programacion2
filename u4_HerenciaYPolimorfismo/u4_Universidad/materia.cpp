@@ -75,7 +75,7 @@ bool Materia::hayCupo(){
     return true;
 }
 bool Materia::hayTitular(){
-    if(titular==nullptr)
+    if(titular==NULL)
         return false;
     return true;
 }

@@ -13,11 +13,12 @@ private:
     std::string titulo;
 public:
     Docente();
-    Docente(int id, std::string names, std::string surnames, std::string mail, std::string degree);
+    Docente(int id, std::string names, std::string surnames, std::string email, std::string degree);
     ~Docente();
     std::string getTitulo();
+    Materia** getMaterias(Materia** materias, int lim);
     void setTitulo(std::string degree);
-    void inscripcion(Materia** materias, int code);
+    void inscripcion(Materia** materias, int code, int lim);
 };
 
 

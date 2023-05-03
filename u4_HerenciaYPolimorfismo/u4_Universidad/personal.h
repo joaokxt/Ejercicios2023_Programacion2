@@ -12,7 +12,7 @@ protected:
     std::string nombres;
     std::string apellidos;
     std::string mail;
-    int inscripto;
+    int inscripciones;
 public:
     Personal();
     Personal(int id, std::string names, std::string surnames, std::string mail);
@@ -21,6 +21,7 @@ public:
     std::string getNombres();
     std::string getApellidos();
     std::string getMail();
+    int getInscripciones();
     void setDNI(int id);
     void setNombres(std::string names);
     void setApellidos(std::string surnames);

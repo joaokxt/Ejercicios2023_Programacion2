@@ -5,11 +5,15 @@ Personal::Personal() {
     dni=0;
     nombres="John";
     apellidos="Doe";
+    mail="yahoo";
+    inscripciones=0;
 }
-Personal::Personal(int id, string names, string surnames, string mail){
+Personal::Personal(int id, string names, string surnames, string email){
     dni=id;
     nombres=names;
     apellidos=surnames;
+    mail=email;
+    inscripciones=0;
 }
 Personal::~Personal(){
     
@@ -26,6 +30,9 @@ std::string Personal::getApellidos() {
 std::string Personal::getMail(){
     return mail;
 }
+int Personal::getInscripciones(){
+    return inscripciones;
+}
 void Personal::setDNI(int id) {
     dni=id;
 }
@@ -35,6 +42,6 @@ void Personal::setNombres(string names) {
 void Personal::setApellidos(string surnames) {
     apellidos=surnames;
 }
-void Personal::setMail(string mail){
-    mail=mail;
+void Personal::setMail(string email){
+    mail=email;
 }
