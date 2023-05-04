@@ -67,7 +67,7 @@ void Alta(){
             cout<<code;
             materias[cantMaterias] = new Materia(code, nombre);
             cantMaterias++;
-            cout<<"\nIngrese algo para continuar >>>";
+            cout<<"\nIngrese algo para continuar >>> ";
             cin>>ing;
             break;
         default:
@@ -85,7 +85,7 @@ void Inscribir(){
     cout<<"-=-=-=-=|INSCRIPCION A MATERIA|=-=-=-=-"<<endl;
     if(cantAlumnos==0){
         cout<<"TODAVIA NO HAY ALUMNOS REGISTRADOS!"<<endl;
-        cout<<"Ingrese algo para continuar >>>";
+        cout<<"Ingrese algo para continuar >>> ";
         cin>>ing;
         return;
     }
@@ -111,7 +111,7 @@ void Inscribir(){
     cout<<"INSCRIPCION DE: "<<alumnos[j]->getNombres()<<" "<<alumnos[j]->getApellidos()<<endl;
     if(cantMaterias==0){
         cout<<"TODAVIA NO HAY MATERIAS REGISTRADAS!"<<endl;
-        cout<<"Ingrese algo para continuar >>>";
+        cout<<"Ingrese algo para continuar >>> ";
         cin>>ing;
         return;
     }
@@ -134,7 +134,7 @@ void Inscribir(){
 
     system("cls");
     cout<<"INSCRIPCION EXITOSA"<<endl;
-    cout<<"Ingrese algo para continuar >>>";
+    cout<<"Ingrese algo para continuar >>> ";
     cin>>ing;
     return;
 }
@@ -148,7 +148,7 @@ void Anotar(){
     cout<<"-=-=-=-=|ANOTAR TITULAR|=-=-=-=-"<<endl;
     if(cantDocentes==0){
         cout<<"TODAVIA NO HAY DOCENTES REGISTRADOS!"<<endl;
-        cout<<"Ingrese algo para continuar >>>";
+        cout<<"Ingrese algo para continuar >>> ";
         cin>>ing;
         return;
     }
@@ -176,7 +176,7 @@ void Anotar(){
     cout<<"Seleccione la materia: "<<endl;
     if(cantMaterias==0){
         cout<<"TODAVIA NO HAY MATERIAS REGISTRADAS!"<<endl;
-        cout<<"Ingrese algo para continuar >>>";
+        cout<<"Ingrese algo para continuar >>> ";
         cin>>ing;
         return;
     }
@@ -194,7 +194,7 @@ void Anotar(){
 
     system("cls");
     cout<<"INSCRIPCION EXITOSA"<<endl;
-    cout<<"Ingrese algo para continuar >>>";
+    cout<<"Ingrese algo para continuar >>> ";
     cin>>ing;
     return;
 }
@@ -208,7 +208,7 @@ void Cargar(){
     cout<<"-=-=-=-=|CARGAR NOTA|=-=-=-=-"<<endl;
     if(cantAlumnos==0){
         cout<<"TODAVIA NO HAY ALUMNOS REGISTRADOS!"<<endl;
-        cout<<"Ingrese algo para continuar >>>";
+        cout<<"Ingrese algo para continuar >>> ";
         cin>>ing;
         return;
     }
@@ -234,7 +234,7 @@ void Cargar(){
     cout<<"CARGAR NOTA DE: "<<alumnos[j]->getNombres()<<" "<<alumnos[j]->getApellidos()<<endl;
     if(alumnos[j]->getInscripciones()==0){
         cout<<"EL ALUMNO NO ESTA ANOTADO EN NINGUNA MATERIA!"<<endl;
-        cout<<"Ingrese algo para continuar >>>";
+        cout<<"Ingrese algo para continuar >>> ";
         cin>>ing;
         return;
     }
@@ -261,7 +261,7 @@ void Cargar(){
 
     system("cls");
     cout<<"CARGA EXITOSA"<<endl;
-    cout<<"Ingrese algo para continuar >>>";
+    cout<<"Ingrese algo para continuar >>> ";
     cin>>ing;
     return;
 }
@@ -276,7 +276,7 @@ void Modificar(){
     cout<<"-=-=-=-=|MODIFICAR DATOS|=-=-=-=-"<<endl;
     if(cantAlumnos==0 && cantDocentes==0){
         cout<<"TODAVIA NO HAY PERSONAL REGISTRADO!"<<endl;
-        cout<<"Ingrese algo para continuar >>>";
+        cout<<"Ingrese algo para continuar >>> ";
         cin>>ing;
         return;
     }
@@ -448,7 +448,7 @@ int main(){
                     delete alumnos[i];
                 for(i=0;i<cantDocentes;i++)
                     delete docentes[i];
-                break;
+                return 0;
         }
     }
     return 0;
