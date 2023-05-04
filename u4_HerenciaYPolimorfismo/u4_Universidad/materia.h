@@ -30,7 +30,7 @@ public:
     int getInscriptos();
     void setNuevoDNI(int id, int newId);
     void setNotas(int nota, int dni);
-    void setAlumno(Alumno* alumno);
+    void setAlumno(Alumno &alumno);
     void setTitular(Docente* docente);
     bool hayCupo();
     bool hayTitular();
