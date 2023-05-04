@@ -19,7 +19,6 @@ char ing;
     El programa se incia sin alumnos ni docentes ni materias registradas
     Antes de inscribirse a la materia, hace falta registrarla en alta
     Antes de cargar notas, el alumno debe estar inscripto en materia
-    El dni no se puede cambiar porque es el dato usado para encontrar las notas en la materia
 */
 
 void Alta(){
@@ -66,6 +65,10 @@ void Alta(){
             cantDocentes++;
             break;
         case 3:
+            /*
+                Se genera un codigo por cada materia, aunque tengan el mismo nombre
+                Es para representar distintas catedras, por ejemplo
+            */
             cout<<"-=-=-=-=|ALTA MATERIA|=-=-=-=-"<<endl;
             cout<<"Nombre: ";
             cin>>nombre;
@@ -344,6 +347,7 @@ void Modificar(){
                         alumnos[j]->setEdad(edad);
                         break;
                     case 5:
+                        //El dni no se puede cambiar porque es el dato usado para encontrar las notas en la materia
                         cout<<"No se puede cambiar el dni!"<<endl;
                         cout<<"Ingrese algo para continuar >>>";
                         cin>>ing;
