@@ -121,7 +121,7 @@ void Inscribir(){
             cout<<"-=-=-=-=--=-=-=-=--=-=-=-=--=-=-=-=--=-=-=-=-"<<endl;
             cout<<"NOMBRE: "<<materias[i]->getNombre()<<endl;
             cout<<"CODIGO: "<<materias[i]->getCodigo()<<endl;
-            if(materias[i]->getTitular()!=nullptr)
+            if(materias[i]->getTitular()!=NULL)
                 cout<<"DOCENTE TITULAR: "<<materias[i]->getTitular()->getNombres()<<endl;
             else
                 cout<<"DOCENTE TITULAR: SIN DOCENTE ASIGNADO"<<endl;
@@ -241,13 +241,13 @@ void Cargar(){
     cout<<"Seleccione la materia: "<<endl;
     for(i=0;i<alumnos[j]->getInscripciones();i++){
             cout<<"-=-=-=-=--=-=-=-=--=-=-=-=--=-=-=-=--=-=-=-=-"<<endl;
-            cout<<"NOMBRE: "<<alumnos[j]->getMaterias(materias, cantMaterias)[i]->getNombre()<<endl;
-            cout<<"CODIGO: "<<alumnos[j]->getMaterias(materias, cantMaterias)[i]->getCodigo()<<endl;
-            if(alumnos[j]->getMaterias(materias, cantMaterias)[i]->getTitular()!=nullptr)
-                cout<<"DOCENTE TITULAR: "<<alumnos[j]->getMaterias(materias, cantMaterias)[i]->getTitular()->getNombres()<<endl;
+            cout<<"NOMBRE: "<<alumnos[j]->getMaterias()[i]->getNombre()<<endl;
+            cout<<"CODIGO: "<<alumnos[j]->getMaterias()[i]->getCodigo()<<endl;
+            if(alumnos[j]->getMaterias()[i]->getTitular()!=nullptr)
+                cout<<"DOCENTE TITULAR: "<<alumnos[j]->getMaterias()[i]->getTitular()->getNombres()<<endl;
             else
                 cout<<"DOCENTE TITULAR: SIN DOCENTE ASIGNADO"<<endl;
-            cout<<"NOTAS: ["<<alumnos[j]->getMaterias(materias, cantMaterias)[i]->getNotas(dni)[0]<<"] ["<<alumnos[j]->getMaterias(materias, cantMaterias)[i]->getNotas(dni)[1]<<"] ["<<alumnos[j]->getMaterias(materias, cantMaterias)[i]->getNotas(dni)[2]<<"]"<<endl;
+            cout<<"NOTAS: ["<<alumnos[j]->getMaterias()[i]->getNotas(dni)[0]<<"] ["<<alumnos[j]->getMaterias()[i]->getNotas(dni)[1]<<"] ["<<alumnos[j]->getMaterias()[i]->getNotas(dni)[2]<<"]"<<endl;
             cout<<"-=-=-=-=--=-=-=-=--=-=-=-=--=-=-=-=--=-=-=-=-"<<endl;
     }
         
@@ -257,7 +257,7 @@ void Cargar(){
     cout<<"Ingrese la nota"<<endl;
     cout<<">>> ";
     cin>>nota;
-    alumnos[j]->cargarNota(materias, code, nota, cantMaterias);
+    alumnos[j]->cargarNota(code, nota);
 
     system("cls");
     cout<<"CARGA EXITOSA"<<endl;
@@ -299,13 +299,13 @@ void Modificar(){
                     cout<<"EL ALUMNO NO ESTA ANOTADO EN NINGUNA MATERIA!"<<endl;
                 for(i=0;i<alumnos[j]->getInscripciones();i++){
                     cout<<"-=-=-=-=--=-=-=-=--=-=-=-=--=-=-=-=--=-=-=-=-"<<endl;
-                    cout<<"NOMBRE: "<<alumnos[j]->getMaterias(materias, cantMaterias)[i]->getNombre()<<endl;
-                    cout<<"CODIGO: "<<alumnos[j]->getMaterias(materias, cantMaterias)[i]->getCodigo()<<endl;
-                    if(alumnos[j]->getMaterias(materias, cantMaterias)[i]->getTitular()!=nullptr)
-                        cout<<"DOCENTE TITULAR: "<<alumnos[j]->getMaterias(materias, cantMaterias)[i]->getTitular()->getNombres()<<endl;
+                    cout<<"NOMBRE: "<<alumnos[j]->getMaterias()[i]->getNombre()<<endl;
+                    cout<<"CODIGO: "<<alumnos[j]->getMaterias()[i]->getCodigo()<<endl;
+                    if(alumnos[j]->getMaterias()[i]->getTitular()!=nullptr)
+                        cout<<"DOCENTE TITULAR: "<<alumnos[j]->getMaterias()[i]->getTitular()->getNombres()<<endl;
                     else
                         cout<<"DOCENTE TITULAR: SIN DOCENTE ASIGNADO"<<endl;
-                    cout<<"NOTAS: ["<<alumnos[j]->getMaterias(materias, cantMaterias)[i]->getNotas(dni)[0]<<"] ["<<alumnos[j]->getMaterias(materias, cantMaterias)[i]->getNotas(dni)[1]<<"] ["<<alumnos[j]->getMaterias(materias, cantMaterias)[i]->getNotas(dni)[2]<<"]"<<endl;
+                    cout<<"NOTAS: ["<<alumnos[j]->getMaterias()[i]->getNotas(dni)[0]<<"] ["<<alumnos[j]->getMaterias()[i]->getNotas(dni)[1]<<"] ["<<alumnos[j]->getMaterias()[i]->getNotas(dni)[2]<<"]"<<endl;
                     cout<<"-=-=-=-=--=-=-=-=--=-=-=-=--=-=-=-=--=-=-=-=-"<<endl;
                 }
                 cout<<"Seleccione el dato que quiere modificar (1 a 6) o ingrese otro numero para volver"<<endl;
@@ -361,8 +361,8 @@ void Modificar(){
                     cout<<"EL DOCENTE NO ESTA DICTA NINGUNA MATERIA!"<<endl;
                 for(i=0;i<docentes[j]->getInscripciones();i++){
                     cout<<"-=-=-=-=--=-=-=-=--=-=-=-=--=-=-=-=--=-=-=-=-"<<endl;
-                    cout<<"NOMBRE: "<<docentes[j]->getMaterias(materias, cantMaterias)[i]->getNombre()<<endl;
-                    cout<<"CODIGO: "<<docentes[j]->getMaterias(materias, cantMaterias)[i]->getCodigo()<<endl;
+                    cout<<"NOMBRE: "<<docentes[j]->getMaterias()[i]->getNombre()<<endl;
+                    cout<<"CODIGO: "<<docentes[j]->getMaterias()[i]->getCodigo()<<endl;
                     cout<<"-=-=-=-=--=-=-=-=--=-=-=-=--=-=-=-=--=-=-=-=-"<<endl;
                 }
                 cout<<"Seleccione el dato que quiere modificar (1 a 6) o ingrese otro numero para volver"<<endl;

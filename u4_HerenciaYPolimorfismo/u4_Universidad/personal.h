@@ -24,6 +24,7 @@ public:
     std::string getApellidos();
     std::string getMail();
     int getInscripciones();
+    Materia** getMaterias();
     void setDNI(int id);
     void setNombres(std::string names);
     void setApellidos(std::string surnames);

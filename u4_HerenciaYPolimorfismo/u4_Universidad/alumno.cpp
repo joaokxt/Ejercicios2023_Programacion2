@@ -21,17 +21,6 @@ string Alumno::getCarrera(){
 int Alumno::getEdad(){
     return edad;
 }
-Materia** Alumno::getMaterias(Materia** materias, int lim){
-    anotadas = new Materia*[inscripciones];
-    int i, j, k=0;
-    for(i=0; i<lim; i++)
-        for(j=0;j<materias[i]->getInscriptos();j++)
-            if(materias[i]->getAlumnos()[j] == this){
-                anotadas[k]=materias[i];
-                k++;
-            }
-    return anotadas;
-}
 void Alumno::setCarrera(string career){
     carrera=career;
 }
@@ -39,15 +28,17 @@ void Alumno::setEdad(int age){
     edad=age;
 }
 void Alumno::inscripcion(Materia** materias, int code, int lim){
-    int i, j, n;
+    int i;
     for(i=0;i<lim; i++)
-        if(materias[i]->getCodigo()==code)
+        if(materias[i]->getCodigo()==code){
             materias[i]->setAlumno(this);
-    inscripciones++;
+            anotadas[inscripciones]=materias[i];
+            inscripciones++;
+        }
 }
-void Alumno::cargarNota(Materia** materias, int code, int nota, int lim){
-    int i, j, n;
-    for(i=0;i<lim; i++)
-        if(materias[i]->getCodigo()==code)
-            materias[i]->setNotas(nota, dni);
+void Alumno::cargarNota(int code, int nota){
+    int i;
+    for(i=0;i<inscripciones; i++)
+        if(anotadas[i]->getCodigo()==code)
+            anotadas[i]->setNotas(nota, dni);
 }

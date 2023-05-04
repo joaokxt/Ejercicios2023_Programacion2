@@ -15,11 +15,10 @@ public:
     ~Alumno();
     std::string getCarrera();
     int getEdad();
-    Materia** getMaterias(Materia** materias, int lim);
     void setCarrera(std::string career);
     void setEdad(int age);
     void inscripcion(Materia** materias, int code, int lim);
-    void cargarNota(Materia** materias, int code, int nota, int lim);
+    void cargarNota(int code, int nota);
 };
 
 

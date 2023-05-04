@@ -8,6 +8,7 @@ Personal::Personal() {
     apellidos="Doe";
     mail="yahoo";
     inscripciones=0;
+    anotadas = new Materia*[10];
 }
 Personal::Personal(int id, string names, string surnames, string email){
     dni=id;
@@ -15,9 +16,11 @@ Personal::Personal(int id, string names, string surnames, string email){
     apellidos=surnames;
     mail=email;
     inscripciones=0;
+    anotadas = new Materia*[10];
 }
 Personal::~Personal(){
-    delete[] anotadas;
+    for(int i=0;i<10;i++)
+        delete anotadas[i];
 }
 int Personal::getDNI() {
     return dni;
@@ -33,6 +36,13 @@ std::string Personal::getMail(){
 }
 int Personal::getInscripciones(){
     return inscripciones;
+}
+Materia** Personal::getMaterias(){
+    Materia** retorno;
+    retorno = new Materia*[inscripciones];
+    for(int i=0; i<inscripciones; i++)
+        retorno[i]=anotadas[i];
+    return retorno;
 }
 void Personal::setDNI(int id) {
     dni=id;
