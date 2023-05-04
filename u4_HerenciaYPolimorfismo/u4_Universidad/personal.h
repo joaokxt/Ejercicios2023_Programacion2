@@ -6,6 +6,7 @@
 #define EJERCICIOS2023_PROGRAMACION2_PERSONAL_H
 #include <string>
 
+class Materia;
 class Personal {
 protected:
     int dni;
@@ -13,6 +14,7 @@ protected:
     std::string apellidos;
     std::string mail;
     int inscripciones;
+    Materia** anotadas;
 public:
     Personal();
     Personal(int id, std::string names, std::string surnames, std::string mail);

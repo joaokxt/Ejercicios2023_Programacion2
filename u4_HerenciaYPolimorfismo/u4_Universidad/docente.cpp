@@ -17,11 +17,11 @@ string Docente::getTitulo(){
     return titulo;
 }
 Materia** Docente::getMaterias(Materia** materias, int lim){
-    Materia** anotadas; /*Array de punteros a materias*/
+     /*Array de punteros a materias*/
     anotadas = new Materia*[inscripciones]; 
     int i, j, k=0;
     for(i=0; i<lim; i++)
-        if(materias[i]->getTitular()->getDNI() == dni){
+        if(materias[i]->getTitular() == this){
                 anotadas[k]=materias[i];
                 k++;
             }

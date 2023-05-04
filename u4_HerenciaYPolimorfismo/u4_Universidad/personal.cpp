@@ -1,4 +1,5 @@
 #include "personal.h"
+#include "materia.h"
 using namespace std;
 
 Personal::Personal() {
@@ -16,7 +17,7 @@ Personal::Personal(int id, string names, string surnames, string email){
     inscripciones=0;
 }
 Personal::~Personal(){
-    
+    delete[] anotadas;
 }
 int Personal::getDNI() {
     return dni;

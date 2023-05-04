@@ -22,12 +22,11 @@ int Alumno::getEdad(){
     return edad;
 }
 Materia** Alumno::getMaterias(Materia** materias, int lim){
-    Materia** anotadas;
     anotadas = new Materia*[inscripciones];
     int i, j, k=0;
     for(i=0; i<lim; i++)
         for(j=0;j<materias[i]->getInscriptos();j++)
-            if(materias[i]->getAlumnos()[j]->getDNI() == dni){
+            if(materias[i]->getAlumnos()[j] == this){
                 anotadas[k]=materias[i];
                 k++;
             }

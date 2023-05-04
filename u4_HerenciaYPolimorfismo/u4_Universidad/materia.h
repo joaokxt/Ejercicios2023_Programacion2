@@ -14,7 +14,7 @@ class Materia {
 private:
     int codigo;
     std::string nombre;
-    int notas[10][4];
+    int notas[10][4]; /*Tabla de notas, 1 fila x alumno, 1ra celda identifica alumno*/
     Alumno* alumnos[10];
     Docente* titular;
     int inscriptos;
@@ -30,7 +30,7 @@ public:
     int getInscriptos();
     void setNuevoDNI(int id, int newId);
     void setNotas(int nota, int dni);
-    void setAlumno(Alumno &alumno);
+    void setAlumno(Alumno* alumno);
     void setTitular(Docente* docente);
     bool hayCupo();
     bool hayTitular();
