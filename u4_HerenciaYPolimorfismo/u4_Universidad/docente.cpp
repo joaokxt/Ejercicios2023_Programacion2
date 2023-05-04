@@ -11,14 +11,14 @@ Docente::Docente(int id, std::string names, std::string surnames, std::string em
     titulo=degree;
 } 
 Docente::~Docente(){
-
+    
 }  
 string Docente::getTitulo(){
     return titulo;
 }
 Materia** Docente::getMaterias(Materia** materias, int lim){
-    Materia** anotadas;
-    anotadas = new Materia*[inscripciones];
+    Materia** anotadas; /*Array de punteros a materias*/
+    anotadas = new Materia*[inscripciones]; 
     int i, j, k=0;
     for(i=0; i<lim; i++)
         if(materias[i]->getTitular()->getDNI() == dni){

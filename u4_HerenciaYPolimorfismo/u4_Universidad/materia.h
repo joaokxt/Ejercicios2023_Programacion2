@@ -14,8 +14,8 @@ class Materia {
 private:
     int codigo;
     std::string nombre;
-    int notas[100][4];
-    Alumno* alumnos[100];
+    int notas[10][4];
+    Alumno* alumnos[10];
     Docente* titular;
     int inscriptos;
 public:
@@ -28,6 +28,7 @@ public:
     Alumno** getAlumnos();
     Docente* getTitular();
     int getInscriptos();
+    void setNuevoDNI(int id, int newId);
     void setNotas(int nota, int dni);
     void setAlumno(Alumno* alumno);
     void setTitular(Docente* docente);

@@ -8,7 +8,7 @@ Materia::Materia(){
     int i, j;
     nombre="Sin Nombre";
     codigo = 0;
-    for(i=0;i<100;i++){
+    for(i=0;i<10;i++){
         for(j=0;j<4;j++)
             notas[i][j]=0;
     }
@@ -18,14 +18,16 @@ Materia::Materia(int code, string name){
     int i, j;
     nombre = name;
     codigo = code;
-    for(i=0;i<100;i++){
+    for(i=0;i<10;i++){
         for(j=0; j<4; j++)
             notas[i][j]=0;
     }
     inscriptos=0;
 }
 Materia::~Materia(){
-    
+    for(int i=0; i<inscriptos; i++)
+        delete alumnos[i];
+    delete titular;
 }
 int Materia::getCodigo(){
     return codigo;
@@ -36,7 +38,7 @@ std::string Materia::getNombre(){
 int* Materia::getNotas(int dni){
     int *result, i, j;
     result = new int [3];
-    for(i=0;i<100;i++)
+    for(i=0;i<10;i++)
         if(notas[i][0]==dni)
             for(j=0;j<3; j++)
                 result[j]=notas[i][j+1];

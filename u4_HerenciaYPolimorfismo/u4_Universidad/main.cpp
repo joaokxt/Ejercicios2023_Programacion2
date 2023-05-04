@@ -9,9 +9,9 @@
 #include "materia.h"
 using namespace std;
 
-Materia* materias[100];
-Alumno* alumnos[100];
-Docente* docentes[100];
+Materia* materias[10];
+Alumno* alumnos[10];
+Docente* docentes[10];
 int opcion, cantAlumnos=0, cantDocentes=0, cantMaterias=0, i, j, k;
 char ing;
 
@@ -333,9 +333,10 @@ void Modificar(){
                         alumnos[j]->setEdad(edad);
                         break;
                     case 5:
-                        cout<<"DNI: ";
-                        cin>>dni;
-                        alumnos[j]->setDNI(dni);
+                        cout<<"No se puede cambiar el dni!"<<endl;
+                        cout<<"Ingrese algo para continuar >>>";
+                        cin>>ing;
+                        return;
                         break;
                     case 6:
                         cout<<"Carrera: ";
@@ -384,10 +385,10 @@ void Modificar(){
                         docentes[j]->setMail(mail);
                         break;
                     case 4:
-                        cout<<"DNI: ";
-                        cin>>dni;
-                        alumnos[j]->setDNI(dni);
-                        break;
+                        cout<<"No se puede cambiar el dni!"<<endl;
+                        cout<<"Ingrese algo para continuar >>>";
+                        cin>>ing;
+                        return;
                     case 5:
                         cout<<"Titulo: ";
                         cin>>titulo;
@@ -441,8 +442,14 @@ int main(){
                 Modificar();
                 break;
             default:
-                return 0;
+                for(i=0;i<cantMaterias;i++)
+                    delete materias[i];
+                for(i=0;i<cantAlumnos;i++)
+                    delete alumnos[i];
+                for(i=0;i<cantDocentes;i++)
+                    delete docentes[i];
                 break;
         }
     }
+    return 0;
 }
