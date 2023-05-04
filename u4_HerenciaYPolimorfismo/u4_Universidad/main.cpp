@@ -15,6 +15,13 @@ Docente* docentes[10];
 int opcion, cantAlumnos=0, cantDocentes=0, cantMaterias=0, i, j;
 char ing;
 
+/*  
+    El programa se incia sin alumnos ni docentes ni materias registradas
+    Antes de inscribirse a la materia, hace falta registrarla en alta
+    Antes de cargar notas, el alumno debe estar inscripto en materia
+    El dni no se puede cambiar porque es el dato usado para encontrar las notas en la materia
+*/
+
 void Alta(){
     int dni, edad, n, code;
     string nombre, apellido, mail, carrera, titulo;
