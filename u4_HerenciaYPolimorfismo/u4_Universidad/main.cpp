@@ -12,7 +12,7 @@ using namespace std;
 Materia* materias[10];
 Alumno* alumnos[10];
 Docente* docentes[10];
-int opcion, cantAlumnos=0, cantDocentes=0, cantMaterias=0, i, j, k;
+int opcion, cantAlumnos=0, cantDocentes=0, cantMaterias=0, i, j;
 char ing;
 
 void Alta(){
@@ -21,7 +21,7 @@ void Alta(){
 
     system("cls");
     cout<<"-=-=-=-=|ALTA|=-=-=-=-"<<endl;
-    cout<<"Desea dar de alta a un: \n1. Alumno \n2. Docente \n3. Catedra"<<endl;
+    cout<<"Desea darle alta a un: \n1. Alumno \n2. Docente \n3. Materia"<<endl;
     cout<<"\n>>> ";
     cin>>opcion;
     system("cls");
@@ -108,6 +108,7 @@ void Inscribir(){
         }
     }while(!valido);
 
+    system("cls");
     cout<<"INSCRIPCION DE: "<<alumnos[j]->getNombres()<<" "<<alumnos[j]->getApellidos()<<endl;
     if(cantMaterias==0){
         cout<<"TODAVIA NO HAY MATERIAS REGISTRADAS!"<<endl;
@@ -121,7 +122,7 @@ void Inscribir(){
             cout<<"-=-=-=-=--=-=-=-=--=-=-=-=--=-=-=-=--=-=-=-=-"<<endl;
             cout<<"NOMBRE: "<<materias[i]->getNombre()<<endl;
             cout<<"CODIGO: "<<materias[i]->getCodigo()<<endl;
-            if(materias[i]->getTitular()!=NULL)
+            if(materias[i]->getTitular()!=nullptr)
                 cout<<"DOCENTE TITULAR: "<<materias[i]->getTitular()->getNombres()<<endl;
             else
                 cout<<"DOCENTE TITULAR: SIN DOCENTE ASIGNADO"<<endl;
@@ -172,6 +173,7 @@ void Anotar(){
         
     }while(!valido);
 
+    system("cls");
     cout<<"ANOTAR A: "<<docentes[j]->getNombres()<<" "<<docentes[j]->getApellidos()<<endl;
     cout<<"Seleccione la materia: "<<endl;
     if(cantMaterias==0){
@@ -231,6 +233,7 @@ void Cargar(){
         }
     }while(!valido);
 
+    system("cls");
     cout<<"CARGAR NOTA DE: "<<alumnos[j]->getNombres()<<" "<<alumnos[j]->getApellidos()<<endl;
     if(alumnos[j]->getInscripciones()==0){
         cout<<"EL ALUMNO NO ESTA ANOTADO EN NINGUNA MATERIA!"<<endl;
@@ -297,17 +300,18 @@ void Modificar(){
                 cout<<"X. MATERIAS: "<<endl;
                 if(alumnos[j]->getInscripciones()==0)
                     cout<<"EL ALUMNO NO ESTA ANOTADO EN NINGUNA MATERIA!"<<endl;
-                for(i=0;i<alumnos[j]->getInscripciones();i++){
-                    cout<<"-=-=-=-=--=-=-=-=--=-=-=-=--=-=-=-=--=-=-=-=-"<<endl;
-                    cout<<"NOMBRE: "<<alumnos[j]->getMaterias()[i]->getNombre()<<endl;
-                    cout<<"CODIGO: "<<alumnos[j]->getMaterias()[i]->getCodigo()<<endl;
-                    if(alumnos[j]->getMaterias()[i]->getTitular()!=nullptr)
-                        cout<<"DOCENTE TITULAR: "<<alumnos[j]->getMaterias()[i]->getTitular()->getNombres()<<endl;
-                    else
-                        cout<<"DOCENTE TITULAR: SIN DOCENTE ASIGNADO"<<endl;
-                    cout<<"NOTAS: ["<<alumnos[j]->getMaterias()[i]->getNotas(dni)[0]<<"] ["<<alumnos[j]->getMaterias()[i]->getNotas(dni)[1]<<"] ["<<alumnos[j]->getMaterias()[i]->getNotas(dni)[2]<<"]"<<endl;
-                    cout<<"-=-=-=-=--=-=-=-=--=-=-=-=--=-=-=-=--=-=-=-=-"<<endl;
-                }
+                else
+                    for(i=0;i<alumnos[j]->getInscripciones();i++){
+                        cout<<"-=-=-=-=--=-=-=-=--=-=-=-=--=-=-=-=--=-=-=-=-"<<endl;
+                        cout<<"NOMBRE: "<<alumnos[j]->getMaterias()[i]->getNombre()<<endl;
+                        cout<<"CODIGO: "<<alumnos[j]->getMaterias()[i]->getCodigo()<<endl;
+                        if(alumnos[j]->getMaterias()[i]->getTitular()!=nullptr)
+                            cout<<"DOCENTE TITULAR: "<<alumnos[j]->getMaterias()[i]->getTitular()->getNombres()<<endl;
+                        else
+                            cout<<"DOCENTE TITULAR: SIN DOCENTE ASIGNADO"<<endl;
+                        cout<<"NOTAS: ["<<alumnos[j]->getMaterias()[i]->getNotas(dni)[0]<<"] ["<<alumnos[j]->getMaterias()[i]->getNotas(dni)[1]<<"] ["<<alumnos[j]->getMaterias()[i]->getNotas(dni)[2]<<"]"<<endl;
+                        cout<<"-=-=-=-=--=-=-=-=--=-=-=-=--=-=-=-=--=-=-=-=-"<<endl;
+                    }
                 cout<<"Seleccione el dato que quiere modificar (1 a 6) o ingrese otro numero para volver"<<endl;
                 cout<<">>> ";
                 cin>>opcion;

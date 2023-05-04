@@ -31,7 +31,7 @@ void Alumno::inscripcion(Materia** materias, int code, int lim){
     int i;
     for(i=0;i<lim; i++)
         if(materias[i]->getCodigo()==code){
-            materias[i]->setAlumno(this);
+            materias[i]->setAlumno(dni);
             anotadas[inscripciones]=materias[i];
             inscripciones++;
         }

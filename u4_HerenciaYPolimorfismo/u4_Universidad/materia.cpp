@@ -13,6 +13,7 @@ Materia::Materia(){
             notas[i][j]=0;
     }
     inscriptos=0;
+    titular=nullptr;
 }
 Materia::Materia(int code, string name){
     int i, j;
@@ -23,10 +24,9 @@ Materia::Materia(int code, string name){
             notas[i][j]=0;
     }
     inscriptos=0;
+    titular=nullptr;
 }
 Materia::~Materia(){
-    for(int i=0; i<inscriptos; i++)
-        delete alumnos[i];
     delete titular;
 }
 int Materia::getCodigo(){
@@ -38,14 +38,11 @@ std::string Materia::getNombre(){
 int* Materia::getNotas(int dni){
     int *result, i, j;
     result = new int [3];
-    for(i=0;i<10;i++)
+    for(i=0;i<inscriptos;i++)
         if(notas[i][0]==dni)
             for(j=0;j<3; j++)
                 result[j]=notas[i][j+1];
     return result;
-}
-Alumno** Materia::getAlumnos(){
-    return alumnos;
 }
 Docente* Materia::getTitular(){
     return titular;
@@ -63,9 +60,8 @@ void Materia::setNotas(int nota, int dni){
                     return;
                 }
 }
-void Materia::setAlumno(Alumno* alumno){
-    alumnos[inscriptos]=alumno;
-    notas[inscriptos][0]=alumno->getDNI();
+void Materia::setAlumno(int dni){
+    notas[inscriptos][0]=dni;
     inscriptos++;  
 }
 void Materia::setTitular(Docente* docente){

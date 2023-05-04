@@ -15,7 +15,6 @@ private:
     int codigo;
     std::string nombre;
     int notas[10][4]; /*Tabla de notas, 1 fila x alumno, 1ra celda identifica alumno*/
-    Alumno* alumnos[10];
     Docente* titular;
     int inscriptos;
 public:
@@ -25,12 +24,11 @@ public:
     int getCodigo();
     std::string getNombre();
     int* getNotas(int dni);
-    Alumno** getAlumnos();
     Docente* getTitular();
     int getInscriptos();
     void setNuevoDNI(int id, int newId);
     void setNotas(int nota, int dni);
-    void setAlumno(Alumno* alumno);
+    void setAlumno(int);
     void setTitular(Docente* docente);
     bool hayCupo();
     bool hayTitular();
