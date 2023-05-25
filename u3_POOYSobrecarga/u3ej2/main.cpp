@@ -11,8 +11,6 @@ string mensaje(){
 }
 
 int main(){
-    
-
     cout<<"RACIONALES"<<endl;
     cout<<"Desea ingresar el suyo o quiere generar uno aleatorio?"<<endl;
     cout<<"[0] Aleatorio | [1] Ingresar"<<endl;
@@ -22,7 +20,6 @@ int main(){
         case 0:
             do{
                 system("cls");
-                delete racional;
                 racional = new Racional();
                 cout<<mensaje()<<endl;
                 cout<<"Esta bien o quiere otro?"<<endl;
@@ -42,28 +39,36 @@ int main(){
     }
     system("cls");
     cout<<mensaje()<<endl;
-    cout<<"Se le sumará 1"<<endl;
-    ++racional;
+    cout<<"Se le sumara 1"<<endl;
+    ++*racional;
     cout<<mensaje()<<endl;
-    cout<<"Se le restará 1"<<endl;
+    cout<<"Se le restara 1"<<endl;
+    --*racional;
     cout<<mensaje()<<endl;
     cout<<"Ingrese algo para continuar >>> ";
     cin>>opcion;
     cout<<mensaje()<<endl;
     cout<<"Ingrese un entero para sumarle a su racional >>> ";
     cin>>opcion;
-    racional+=opcion;
+    *racional+=opcion;
     cout<<mensaje()<<endl;
     cout<<"Ingrese un entero para restarle a su racional >>> ";
     cin>>opcion;
-    racional-=opcion;
+    *racional-=opcion;
     cout<<mensaje()<<endl;
+
     operando = new Racional();
     cout<<"NUEVO RACIONAL! -> "<<operando->getNumerador()<<"/"<<operando->getDenominador()<<" ("<<operando->getValor()<<")"<<endl;
     cout<<"Se lo sumara al suyo"<<endl;
-    racional=racional+operando;
-    
-    
-
+    racional = *racional + operando;
+    cout<<mensaje()<<endl;
+    operando = new Racional();
+    cout<<"NUEVO RACIONAL! -> "<<operando->getNumerador()<<"/"<<operando->getDenominador()<<" ("<<operando->getValor()<<")"<<endl;
+    cout<<"Se lo restara al suyo"<<endl;
+    racional = *racional - operando;
+    cout<<mensaje()<<endl;
+    racional->simplificar();
+    cout<<mensaje()<<endl;
+    cout<<"FIN DE PROGRAMA!"<<endl;
     return 0;
 }

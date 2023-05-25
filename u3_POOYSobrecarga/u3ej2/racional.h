@@ -3,8 +3,8 @@
 
 class Racional{
 private:
-    int numerador;
-    int denominador;
+    float numerador;
+    float denominador;
     int MCD(int a, int b);
 public:
     Racional();
@@ -17,8 +17,8 @@ public:
     void setDenominador(int den);
     void operator++ ();
     void operator-- ();
-    Racional* operator+ (Racional* operando);
-    Racional* operator- (Racional* operando);
+    Racional* operator+ (Racional *operando);
+    Racional* operator- (Racional *operando);
     void operator+= (int operando);
     void operator-= (int operando);
     void simplificar();

@@ -36,20 +36,24 @@ void Racional::operator++(){
 void Racional::operator--(){
     numerador-=denominador;
 }
-Racional Racional::operator+(Racional* operando){
+Racional* Racional::operator+(Racional* operando){
     int den, num1, num2, num;
+    Racional* resultado;
     den = denominador*operando->getDenominador();
     num1 = numerador*operando->getDenominador();
     num2 = operando->getNumerador()*denominador;
-    return Racional(num, den);
+    resultado = new Racional(num, den);
+    return resultado;
 }
-Racional Racional::operator-(Racional* operando){
+Racional* Racional::operator-(Racional* operando){
     int den, num1, num2, num;
+    Racional* resultado;
     den = denominador*operando->getDenominador();
     num1 = numerador*operando->getDenominador();
     num2 = operando->getNumerador()*denominador;
     num = num1-num2;
-    return Racional(num, den);
+    resultado = new Racional(num, den);
+    return resultado;
 }
 void Racional::operator+=(int operando){
     numerador+=denominador*operando;
