@@ -15,6 +15,7 @@ public:
     Persona();
     Persona(std::string name, int* birth, char sex);
     Persona(std::string name, int* birth, int id, char sex, float weight, float height);
+    ~Persona();
     void setNombre(std::string name);
     void setNacimiento(int* birth);
     void setDni(int id);
@@ -23,6 +24,7 @@ public:
     void setAltura(float height);
     std::string getNombre();
     int* getNacimiento();
+    int getEdad();
     int getDni();
     char getSexo();
     float getPeso();
@@ -30,6 +32,6 @@ public:
     float calcularIMC();
     int calcularEdad();
     bool esMayorDeEdad();
-}
+};
 
 #endif
